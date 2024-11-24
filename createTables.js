@@ -33,17 +33,7 @@ const createTables = async () => {
         FOREIGN KEY (CI_USUARIO) REFERENCES USERS(CI) ON UPDATE CASCADE
         );
     `;
-    const esquema_vacunacion = `
-        CREATE TABLE esquema_vacunacion (
-        id SERIAL PRIMARY KEY,
-        id_bebe INTEGER NOT NULL,
-        id_vacuna INTEGER NOT NULL,
-        fecha_programada DATE NOT NULL,
-        aplicada VARCHAR(20) default 'pendiente' NOT NULL,
-        FOREIGN KEY (id_bebe) REFERENCES bebe(id) ON DELETE CASCADE,
-        FOREIGN KEY (id_vacuna) REFERENCES vacunas(id)
-        );
-    `;
+    
     
     const vacunas = `
         CREATE TABLE vacunas (
@@ -103,6 +93,17 @@ const createTables = async () => {
         -- Anti influenza estacional adulto
         ('Anti influenza estacional adulto', 21915, 'dias');
 
+    `;
+    const esquema_vacunacion = `
+        CREATE TABLE esquema_vacunacion (
+        id SERIAL PRIMARY KEY,
+        id_bebe INTEGER NOT NULL,
+        id_vacuna INTEGER NOT NULL,
+        fecha_programada DATE NOT NULL,
+        aplicada VARCHAR(20) default 'pendiente' NOT NULL,
+        FOREIGN KEY (id_bebe) REFERENCES bebe(id) ON DELETE CASCADE,
+        FOREIGN KEY (id_vacuna) REFERENCES vacunas(id)
+        );
     `;
     const recordatorio_medicamento = `
         CREATE TABLE recordatorio_medicamento (
@@ -257,11 +258,6 @@ const createTables = async () => {
     // Crear tabla de bebés
     await db.query(bebe);
     console.log('Table "bebe" created successfully.');
-
-    // Crear tabla de esquema de vacunación
-    await db.query(esquema_vacunacion);
-    console.log('Table "esquema_vacunacion" created successfully.');
-
     // Crear tabla de vacunas
     await db.query(vacunas);
     console.log('Table "vacunas" created successfully.');
@@ -269,6 +265,11 @@ const createTables = async () => {
     // Insertar datos iniciales en vacunas
     await db.query(insertVacunas);
     console.log('Initial insertVacunas inserted successfully.');
+    // Crear tabla de esquema de vacunación
+    await db.query(esquema_vacunacion);
+    console.log('Table "esquema_vacunacion" created successfully.');
+
+
 
     // Crear tabla de recordatorio de medicamentos
     await db.query(recordatorio_medicamento);
