@@ -134,7 +134,7 @@ const createTables = async () => {
             ('Eructar','Si tu bebé tiene Eructos, puedes intentar lo siguiente:'),
             ('Fatigado','Si tu bebé esta Fatigado, puedes intentar lo siguiente:'),
             ('Hambriento','Si tu bebé tiene Hambre, puedes intentar lo siguiente:'),
-            ('Malestar','Si tu bebé tiene Malestar, puedes intentar lo siguiente:'),
+            ('Malestar','Si tu bebé tiene Malestar, puedes intentar lo siguiente:');
     
     `;
     const soluciones = `
@@ -186,7 +186,7 @@ const createTables = async () => {
     ('Usar un chupete: Algunos bebés se calman con la succión no nutritiva.', 5),
     ('Cargarlo en un portabebés: Esto puede proporcionarle seguridad y calidez.', 5),
     ('Observar signos de enfermedad: Como fiebre, sarpullido o vómitos, y actuar rápidamente si están presentes.', 5),
-    ('Consultar al pediatra: Si el malestar persiste o hay otros síntomas graves, busca orientación médica.', 5),
+    ('Consultar al pediatra: Si el malestar persiste o hay otros síntomas graves, busca orientación médica.', 5);
     `;
     const datos=`
         CREATE TABLE datos (
