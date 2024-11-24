@@ -259,7 +259,7 @@ const createTables = async () => {
     console.log('Table "bebe" created successfully.');
 
     // Crear tabla de esquema de vacunación
-    await db.query(esquemaVacunacion);
+    await db.query(esquema_vacunacion);
     console.log('Table "esquema_vacunacion" created successfully.');
 
     // Crear tabla de vacunas
@@ -271,7 +271,7 @@ const createTables = async () => {
     console.log('Initial insertVacunas inserted successfully.');
 
     // Crear tabla de recordatorio de medicamentos
-    await db.query(recordatorioMedicamento);
+    await db.query(recordatorio_medicamento);
     console.log('Table "recordatorio_medicamento" created successfully.');
 
     // Crear tabla de recomendaciones
