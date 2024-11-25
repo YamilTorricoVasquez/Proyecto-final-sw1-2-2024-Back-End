@@ -626,10 +626,7 @@ const createTables = async () => {
             await db.query(chat);
             console.log('Table "chat" created successfully.');
         }
-        if (!(await checkTableExists('trigger_incrementar_o_insertar'))) {
-            await db.query(createTriggerDatos);
-            console.log('Trigger "trigger_incrementar_o_insertar" created successfully.');
-        }
+       
 
     } catch (err) {
         console.error('Error during database setup:', err);
