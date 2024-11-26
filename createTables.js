@@ -521,7 +521,7 @@ const createTables = async () => {
         fecha DATE NOT NULL,
         contador INT NOT NULL,
         id_bebe INT NOT NULL,
-        FOREIGN KEY (id_bebe) REFERENCES BEBE(id)
+        FOREIGN KEY (id_bebe) REFERENCES BEBE(id) ON DELETE CASCADE
         );
     `;
     const createTriggerDatos = `
