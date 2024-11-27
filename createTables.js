@@ -437,6 +437,7 @@ const createTables = async () => {
         CREATE TABLE recordatorio_medicamento (
         id_recordatorio SERIAL PRIMARY KEY,
         nombre_medicamento VARCHAR(100) NOT NULL,
+        descripcion_medicamento VARCHAR(100) NOT NULL,
         hora TIME NOT NULL,
         fecha_inicio DATE NOT NULL,
         fecha_fin DATE NOT NULL,
